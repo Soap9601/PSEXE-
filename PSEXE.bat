@@ -1,4 +1,3 @@
-
 @echo off
 cd files >nul
 mode 100, 30
@@ -110,6 +109,7 @@ if /I "%errorlevel%" EQU "3" (
 )
 
 if /I "%errorlevel%" EQU "4" (
+  echo %success% Shutting down the remote machine...
   winrs -r:%domain% -u:%user% -p:%pass% "shutdown /s /f /t 0"
   cls
   goto menu
